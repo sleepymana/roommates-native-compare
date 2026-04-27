@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roommates native — A/B/C/D compare</title>
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --panel: #141416;
+    --text: #eaeaea;
+    --muted: #9a9a9f;
+    --accent: #7fb4ff;
+    --new: #6ae6a0;
+    --branded: #ffb86b;
+    --pro: #c08bff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1800px; margin: 0 auto; padding: 48px 32px 96px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .lede { color: var(--muted); margin: 0 0 40px; max-width: 80ch; line-height: 1.5; }
+  .pair { margin: 0 0 56px; background: var(--panel); border: 1px solid #1f1f23; border-radius: 14px; padding: 24px; }
+  .pair header h2 { margin: 0 0 6px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .pair header .prompt { margin: 0 0 20px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+  .grid { display: grid; gap: 20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  figure { margin: 0; position: relative; }
+  .letter {
+    position: absolute; top: 10px; left: 10px;
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(0,0,0,0.72); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 18px; letter-spacing: 0.02em;
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.18);
+    pointer-events: none; z-index: 2;
+  }
+  img { width: 100%; height: auto; display: block; border-radius: 10px; background: #000; }
+  figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+  .tag { display: inline-block; padding: 3px 8px; border-radius: 999px; font-weight: 500; font-size: 11px; letter-spacing: 0.02em; }
+  .tag-old { color: var(--accent); background: rgba(127,180,255,0.1); }
+  .tag-new { color: var(--new); background: rgba(106,230,160,0.1); }
+  .tag-branded { color: var(--branded); background: rgba(255,184,107,0.1); }
+  .tag-pro { color: var(--pro); background: rgba(192,139,255,0.12); }
+  @media screen and (max-width: 1400px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+  @media screen and (max-width: 1100px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+  @media screen and (max-width: 700px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+  @media print {
+    .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+    .grid-3 { grid-template-columns: 1fr 1fr 1fr !important; }
+    .grid-2 { grid-template-columns: 1fr 1fr !important; }
+    .pair { page-break-inside: avoid; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Roommates native — A/B/C/D compare</h1>
+    <p class="lede">Same 10 scenes, four renders each. <strong>A</strong> <span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span> <strong>B</strong> <span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span> <strong>C</strong> <span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span> <strong>D</strong> <span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span>. C and D use prompts that swap blank packaging for fictional labels (Honey-O's, Casa Verde, Fetch, Morning &amp; Co, Flora, Frank). D reruns the C prompts through Nano Banana Pro to test whether Pro materially improves packaging realism and scene fidelity.</p>
+    
+        <section class="pair">
+          <header>
+            <h2>01 — two women laughing fairy lights</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two young women laughing hysterically on a small couch, one mid-cackle with her mouth wide open and head tilted back, t…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/01_two-women-laughing-fairy-lights_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/01_two-women-laughing-fairy-lights_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/01_two-women-laughing-fairy-lights_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/01_two-women-laughing-fairy-lights_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>02 — three guys game day tension</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three male roommates on a couch watching a close moment in a big game on TV, all visibly tense. One covering his eyes w…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/02_three-guys-game-day-tension_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/02_three-guys-game-day-tension_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/02_three-guys-game-day-tension_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/02_three-guys-game-day-tension_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>03 — moving in mixed pair daytime</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two new roommates standing in the middle of a mostly empty living room on moving day, a stack of cardboard boxes just b…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/03_moving-in-mixed-pair-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/03_moving-in-mixed-pair-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/03_moving-in-mixed-pair-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/03_moving-in-mixed-pair-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>04 — trio women cooking tacos kitchen</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three female roommates crowded around a small kitchen island making tacos, mid-chaos, ingredients scattered across the …</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>05 — pair men wfh couch daytime</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two male roommates at opposite ends of a couch, both working on laptops, both wearing headphones, neither looking at ea…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/05_pair-men-wfh-couch-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/05_pair-men-wfh-couch-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/05_pair-men-wfh-couch-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/05_pair-men-wfh-couch-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>06 — late night cereal kitchen pair women</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates in a small kitchen at 2am eating cereal straight from the box, both in oversized pajamas. One stan…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>07 — unboxing delivery trio mixed daytime</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three roommates on the living room floor unboxing a large cardboard package. The box is ripped open, packing peanuts sc…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>08 — getting ready bathroom pair women</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates getting ready to go out together in a small apartment bathroom, both leaning toward the mirror. On…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/08_getting-ready-bathroom-pair-women_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/08_getting-ready-bathroom-pair-women_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/08_getting-ready-bathroom-pair-women_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/08_getting-ready-bathroom-pair-women_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>09 — face masks couch pair women evening</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates on a couch doing face masks, both with green clay masks on their cheeks and foreheads, hair wrappe…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/09_face-masks-couch-pair-women-evening_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/09_face-masks-couch-pair-women-evening_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/09_face-masks-couch-pair-women-evening_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/09_face-masks-couch-pair-women-evening_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pair">
+          <header>
+            <h2>10 — front steps iced coffee trio mixed outdoor</h2>
+            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three roommates sitting side by side on the front steps of their apartment building on a sunny afternoon, all with iced…</p>
+          </header>
+          <div class="grid grid-4">
+            <figure>
+              <div class="letter">A</div>
+              <img src="img/apr11/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
+              <figcaption><span class="tag tag-old">Apr 11 · NB2 · 1K · OpenRouter</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">B</div>
+              <img src="img/apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
+              <figcaption><span class="tag tag-new">Apr 21 · NB2 · 2K · AI Studio</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">C</div>
+              <img src="img/branded-apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-branded">Apr 21 · NB2 · 2K · branded</span></figcaption>
+            </figure>
+            <figure>
+              <div class="letter">D</div>
+              <img src="img/pro-branded-apr27/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
+              <figcaption><span class="tag tag-pro">Apr 27 · NB-Pro · 2K · branded</span></figcaption>
+            </figure>
+          </div>
+        </section>
+  </div>
+</body>
+</html>
