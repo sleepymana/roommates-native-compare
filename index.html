@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roommates native — A/B/C/D</title>
+<title>Roommates native — picks in 4:5 and 9:16</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,53 +18,49 @@
     --b: #15803d;
     --c: #c2410c;
     --d: #7c3aed;
+    --e: #be185d;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 1760px; margin: 0 auto; padding: 64px 40px 120px; }
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 64px 40px 120px; }
   .hero { margin: 0 0 56px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
   .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
   h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 18px; }
-  .lede { color: #3a3a42; max-width: 68ch; line-height: 1.6; margin: 0 0 24px; font-size: 15px; }
+  .lede { color: #3a3a42; max-width: 72ch; line-height: 1.6; margin: 0 0 24px; font-size: 15px; }
+  .lede a { color: var(--ink); }
   .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
   .legend-chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 12.5px; color: #2a2a30; }
   .legend-chip .dot { width: 22px; height: 22px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 12px; font-family: 'Inter', sans-serif; }
   .legend-chip .meta { color: var(--muted); }
-  .a { background: var(--a); } .b { background: var(--b); } .c { background: var(--c); } .d { background: var(--d); }
-  .pair { margin: 0 0 48px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: 0 1px 2px rgba(20,20,26,0.03); }
+  .a { background: var(--a); } .b { background: var(--b); } .c { background: var(--c); } .d { background: var(--d); } .e { background: var(--e); }
+  .pair { margin: 0 0 56px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: 0 1px 2px rgba(20,20,26,0.03); }
   .pair header { margin: 0 0 22px; }
   .pair header .num { font-family: 'Fraunces', Georgia, serif; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
-  .pair header h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; margin: 4px 0 10px; color: var(--ink); text-transform: capitalize; }
-  .pair header .prompt { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.55; max-width: 90ch; }
-  .grid { display: grid; gap: 18px; }
-  .grid-2 { grid-template-columns: 1fr 1fr; }
-  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .pair header h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; margin: 4px 0 6px; color: var(--ink); text-transform: capitalize; }
+  .pair header .picks-line { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .variant-row { margin: 22px 0 0; padding: 22px 0 0; border-top: 1px dashed var(--line); }
+  .variant-row:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+  .variant-label { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; }
+  .variant-label .pill { width: 30px; height: 30px; border-radius: 8px; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .variant-label .which { font-size: 13.5px; color: var(--ink); font-weight: 600; }
+  .variant-label .meta { font-size: 12.5px; color: var(--muted); }
+  .grid { display: grid; gap: 18px; align-items: start; grid-template-columns: 1fr 1fr 1fr; }
   figure { margin: 0; position: relative; }
-  .letter {
-    position: absolute; top: 12px; left: 12px;
-    width: 38px; height: 38px; border-radius: 10px;
-    color: #fff; display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 17px; letter-spacing: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.25) inset;
-    pointer-events: none; z-index: 2;
-  }
-  .letter.a { background: var(--a); } .letter.b { background: var(--b); } .letter.c { background: var(--c); } .letter.d { background: var(--d); }
+  .ratio { position: absolute; top: 10px; left: 10px; padding: 4px 8px; border-radius: 6px; background: rgba(20,20,26,0.78); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; z-index: 2; }
   img { width: 100%; height: auto; display: block; border-radius: 12px; background: #f2efe7; border: 1px solid var(--line); }
-  figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); line-height: 1.4; }
-  figcaption .cap-title { color: var(--ink); font-weight: 600; margin-right: 6px; }
-  @media screen and (max-width: 1400px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
-  @media screen and (max-width: 1100px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+  figcaption { margin-top: 8px; font-size: 12px; color: var(--muted); line-height: 1.4; }
+  a.download { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  a.download:hover { color: var(--ink); border-color: var(--ink); }
+  .footer-note { margin-top: 40px; font-size: 13px; color: var(--muted); }
+  @media screen and (max-width: 1100px) { .grid { grid-template-columns: 1fr 1fr; } }
   @media screen and (max-width: 700px) {
     .wrap { padding: 40px 20px 80px; }
     h1 { font-size: 32px; }
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
   }
   @media print {
     body { background: #fff; }
-    .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
-    .grid-3 { grid-template-columns: 1fr 1fr 1fr !important; }
-    .grid-2 { grid-template-columns: 1fr 1fr !important; }
+    .grid { grid-template-columns: repeat(3, 1fr) !important; }
     .pair { page-break-inside: avoid; break-inside: avoid; box-shadow: none; }
   }
 </style>
@@ -72,307 +68,469 @@
 <body>
   <div class="wrap">
     <div class="hero">
-      <p class="eyebrow">Roommates · Native creative test</p>
-      <h1>Four renders, same ten scenes.</h1>
-      <p class="lede">Each scene was rendered four ways. C and D use prompts that swap blank packaging for fictional labels (Honey-O's, Casa Verde, Fetch, Morning &amp; Co, Flora, Frank); D reruns those branded prompts through Nano Banana Pro. Use the A / B / C / D markers in the top-left of each image to call out picks.</p>
+      <p class="eyebrow">Roommates · Native creative · Final picks</p>
+      <h1>Final picks in 4:5 and 9:16.</h1>
+      <p class="lede">A/B/C/D selection is complete. Each row below shows the picked variant in three ratios — 1:1 source on the left (the take you chose), then the same image recomposed natively to 4:5 (Instagram feed) and 9:16 (Reels / Stories) via Nano Banana Pro. Scene 04 includes an additional <strong>E — multi-laugh</strong> row generated fresh from the branded prompt with explicit "two of the three women mid-laugh".</p>
       <div class="legend">
         <span class="legend-chip"><span class="dot a">A</span> NB2 · 1K · OpenRouter <span class="meta">— Apr 11</span></span>
         <span class="legend-chip"><span class="dot b">B</span> NB2 · 2K · AI Studio <span class="meta">— Apr 21</span></span>
         <span class="legend-chip"><span class="dot c">C</span> NB2 · 2K · branded <span class="meta">— Apr 21</span></span>
         <span class="legend-chip"><span class="dot d">D</span> NB Pro · 2K · branded <span class="meta">— Apr 27</span></span>
+        <span class="legend-chip"><span class="dot e">E</span> NB Pro · 2K · multi-laugh <span class="meta">— May 20 (Scene 04 only)</span></span>
       </div>
     </div>
-    
-        <section class="pair">
-          <header>
-            <span class="num">Scene 01</span>
-            <h2>two women laughing fairy lights</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two young women laughing hysterically on a small couch, one mid-cackle with her mouth wide open and head tilted back, t…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/01_two-women-laughing-fairy-lights_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/01_two-women-laughing-fairy-lights_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/01_two-women-laughing-fairy-lights_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/01_two-women-laughing-fairy-lights_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 02</span>
-            <h2>three guys game day tension</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three male roommates on a couch watching a close moment in a big game on TV, all visibly tense. One covering his eyes w…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/02_three-guys-game-day-tension_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/02_three-guys-game-day-tension_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/02_three-guys-game-day-tension_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/02_three-guys-game-day-tension_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 03</span>
-            <h2>moving in mixed pair daytime</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two new roommates standing in the middle of a mostly empty living room on moving day, a stack of cardboard boxes just b…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/03_moving-in-mixed-pair-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/03_moving-in-mixed-pair-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/03_moving-in-mixed-pair-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/03_moving-in-mixed-pair-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 04</span>
-            <h2>trio women cooking tacos kitchen</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three female roommates crowded around a small kitchen island making tacos, mid-chaos, ingredients scattered across the …</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 05</span>
-            <h2>pair men wfh couch daytime</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two male roommates at opposite ends of a couch, both working on laptops, both wearing headphones, neither looking at ea…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/05_pair-men-wfh-couch-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/05_pair-men-wfh-couch-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/05_pair-men-wfh-couch-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/05_pair-men-wfh-couch-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 06</span>
-            <h2>late night cereal kitchen pair women</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates in a small kitchen at 2am eating cereal straight from the box, both in oversized pajamas. One stan…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 07</span>
-            <h2>unboxing delivery trio mixed daytime</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three roommates on the living room floor unboxing a large cardboard package. The box is ripped open, packing peanuts sc…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 08</span>
-            <h2>getting ready bathroom pair women</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates getting ready to go out together in a small apartment bathroom, both leaning toward the mirror. On…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/08_getting-ready-bathroom-pair-women_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/08_getting-ready-bathroom-pair-women_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/08_getting-ready-bathroom-pair-women_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/08_getting-ready-bathroom-pair-women_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 09</span>
-            <h2>face masks couch pair women evening</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of two female roommates on a couch doing face masks, both with green clay masks on their cheeks and foreheads, hair wrappe…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/09_face-masks-couch-pair-women-evening_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/09_face-masks-couch-pair-women-evening_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/09_face-masks-couch-pair-women-evening_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/09_face-masks-couch-pair-women-evening_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="pair">
-          <header>
-            <span class="num">Scene 10</span>
-            <h2>front steps iced coffee trio mixed outdoor</h2>
-            <p class="prompt">Candid unposed native phone-style photograph, 1:1 square, of three roommates sitting side by side on the front steps of their apartment building on a sunny afternoon, all with iced…</p>
-          </header>
-          <div class="grid grid-4">
-            <figure>
-              <div class="letter a">A</div>
-              <img src="img/apr11/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="A — Apr 11 NB2 1K OpenRouter" loading="lazy">
-              <figcaption><span class="cap-title">A</span>NB2 · 1K · OpenRouter · Apr 11</figcaption>
-            </figure>
-            <figure>
-              <div class="letter b">B</div>
-              <img src="img/apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="B — Apr 21 NB2 2K AI Studio" loading="lazy">
-              <figcaption><span class="cap-title">B</span>NB2 · 2K · AI Studio · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter c">C</div>
-              <img src="img/branded-apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="C — Apr 21 NB2 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">C</span>NB2 · 2K · branded · Apr 21</figcaption>
-            </figure>
-            <figure>
-              <div class="letter d">D</div>
-              <img src="img/pro-branded-apr27/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="D — Apr 27 NB-Pro 2K branded" loading="lazy">
-              <figcaption><span class="cap-title">D</span>NB Pro · 2K · branded · Apr 27</figcaption>
-            </figure>
-          </div>
-        </section>
+
+    <section class="pair">
+      <header>
+        <span class="num">Scene 01</span>
+        <h2>two women laughing fairy lights</h2>
+        <p class="picks-line">Picks: C · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill c">C</span><span class="which">C — Picked</span><span class="meta">— NB2 · 2K · branded · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/branded-apr21/01_two-women-laughing-fairy-lights_1x1.png" alt="C 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/branded-apr21/01_two-women-laughing-fairy-lights_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/01_two-women-laughing-fairy-lights_C_4x5.png" alt="C 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/01_two-women-laughing-fairy-lights_C_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/01_two-women-laughing-fairy-lights_C_9x16.png" alt="C 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/01_two-women-laughing-fairy-lights_C_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/01_two-women-laughing-fairy-lights_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/01_two-women-laughing-fairy-lights_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/01_two-women-laughing-fairy-lights_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/01_two-women-laughing-fairy-lights_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/01_two-women-laughing-fairy-lights_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/01_two-women-laughing-fairy-lights_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 02</span>
+        <h2>three guys game day tension</h2>
+        <p class="picks-line">Picks: C</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill c">C</span><span class="which">C — Picked</span><span class="meta">— NB2 · 2K · branded · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/branded-apr21/02_three-guys-game-day-tension_1x1.png" alt="C 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/branded-apr21/02_three-guys-game-day-tension_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/02_three-guys-game-day-tension_C_4x5.png" alt="C 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/02_three-guys-game-day-tension_C_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/02_three-guys-game-day-tension_C_9x16.png" alt="C 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/02_three-guys-game-day-tension_C_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 03</span>
+        <h2>moving in mixed pair daytime</h2>
+        <p class="picks-line">Picks: B · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/03_moving-in-mixed-pair-daytime_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/03_moving-in-mixed-pair-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/03_moving-in-mixed-pair-daytime_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/03_moving-in-mixed-pair-daytime_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/03_moving-in-mixed-pair-daytime_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/03_moving-in-mixed-pair-daytime_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/03_moving-in-mixed-pair-daytime_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/03_moving-in-mixed-pair-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/03_moving-in-mixed-pair-daytime_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/03_moving-in-mixed-pair-daytime_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/03_moving-in-mixed-pair-daytime_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/03_moving-in-mixed-pair-daytime_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 04</span>
+        <h2>trio women cooking tacos kitchen</h2>
+        <p class="picks-line">Picks: B · D · E</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/04_trio-women-cooking-tacos-kitchen_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/04_trio-women-cooking-tacos-kitchen_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/04_trio-women-cooking-tacos-kitchen_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill e">E</span><span class="which">E — Multi-laugh (new variant)</span><span class="meta">— NB Pro · 2K · multi-laugh · May 20 (new)</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_E-multilaugh_4x5.png" alt="E 4:5 placeholder for missing 1:1" style="opacity:0.25" loading="lazy">
+            <figcaption>1:1 not generated (E is fresh at 4:5 / 9:16 only)</figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_E-multilaugh_4x5.png" alt="E 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/04_trio-women-cooking-tacos-kitchen_E-multilaugh_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_E-multilaugh_9x16.png" alt="E 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/04_trio-women-cooking-tacos-kitchen_E-multilaugh_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 05</span>
+        <h2>pair men wfh couch daytime</h2>
+        <p class="picks-line">Picks: B · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/05_pair-men-wfh-couch-daytime_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/05_pair-men-wfh-couch-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/05_pair-men-wfh-couch-daytime_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/05_pair-men-wfh-couch-daytime_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/05_pair-men-wfh-couch-daytime_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/05_pair-men-wfh-couch-daytime_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/05_pair-men-wfh-couch-daytime_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/05_pair-men-wfh-couch-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/05_pair-men-wfh-couch-daytime_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/05_pair-men-wfh-couch-daytime_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/05_pair-men-wfh-couch-daytime_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/05_pair-men-wfh-couch-daytime_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 06</span>
+        <h2>late night cereal kitchen pair women</h2>
+        <p class="picks-line">Picks: C</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill c">C</span><span class="which">C — Picked</span><span class="meta">— NB2 · 2K · branded · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/branded-apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" alt="C 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/branded-apr21/06_late-night-cereal-kitchen-pair-women_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/06_late-night-cereal-kitchen-pair-women_C_4x5.png" alt="C 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/06_late-night-cereal-kitchen-pair-women_C_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/06_late-night-cereal-kitchen-pair-women_C_9x16.png" alt="C 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/06_late-night-cereal-kitchen-pair-women_C_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 07</span>
+        <h2>unboxing delivery trio mixed daytime</h2>
+        <p class="picks-line">Picks: B · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/07_unboxing-delivery-trio-mixed-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/07_unboxing-delivery-trio-mixed-daytime_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/07_unboxing-delivery-trio-mixed-daytime_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/07_unboxing-delivery-trio-mixed-daytime_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/07_unboxing-delivery-trio-mixed-daytime_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/07_unboxing-delivery-trio-mixed-daytime_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/07_unboxing-delivery-trio-mixed-daytime_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/07_unboxing-delivery-trio-mixed-daytime_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/07_unboxing-delivery-trio-mixed-daytime_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/07_unboxing-delivery-trio-mixed-daytime_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/07_unboxing-delivery-trio-mixed-daytime_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 08</span>
+        <h2>getting ready bathroom pair women</h2>
+        <p class="picks-line">Picks: A · C</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill a">A</span><span class="which">A — Picked</span><span class="meta">— NB2 · 1K · OpenRouter · Apr 11</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr11/08_getting-ready-bathroom-pair-women_1x1.png" alt="A 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr11/08_getting-ready-bathroom-pair-women_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/08_getting-ready-bathroom-pair-women_A_4x5.png" alt="A 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/08_getting-ready-bathroom-pair-women_A_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/08_getting-ready-bathroom-pair-women_A_9x16.png" alt="A 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/08_getting-ready-bathroom-pair-women_A_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill c">C</span><span class="which">C — Picked</span><span class="meta">— NB2 · 2K · branded · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/branded-apr21/08_getting-ready-bathroom-pair-women_1x1.png" alt="C 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/branded-apr21/08_getting-ready-bathroom-pair-women_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/08_getting-ready-bathroom-pair-women_C_4x5.png" alt="C 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/08_getting-ready-bathroom-pair-women_C_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/08_getting-ready-bathroom-pair-women_C_9x16.png" alt="C 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/08_getting-ready-bathroom-pair-women_C_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 09</span>
+        <h2>face masks couch pair women evening</h2>
+        <p class="picks-line">Picks: B · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/09_face-masks-couch-pair-women-evening_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/09_face-masks-couch-pair-women-evening_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/09_face-masks-couch-pair-women-evening_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/09_face-masks-couch-pair-women-evening_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/09_face-masks-couch-pair-women-evening_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/09_face-masks-couch-pair-women-evening_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/09_face-masks-couch-pair-women-evening_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/09_face-masks-couch-pair-women-evening_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/09_face-masks-couch-pair-women-evening_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/09_face-masks-couch-pair-women-evening_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/09_face-masks-couch-pair-women-evening_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/09_face-masks-couch-pair-women-evening_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="pair">
+      <header>
+        <span class="num">Scene 10</span>
+        <h2>front steps iced coffee trio mixed outdoor</h2>
+        <p class="picks-line">Picks: B · D</p>
+      </header>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill b">B</span><span class="which">B — Picked</span><span class="meta">— NB2 · 2K · AI Studio · Apr 21</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="B 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/apr21/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/10_front-steps-iced-coffee-trio-mixed-outdoor_B_4x5.png" alt="B 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/10_front-steps-iced-coffee-trio-mixed-outdoor_B_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/10_front-steps-iced-coffee-trio-mixed-outdoor_B_9x16.png" alt="B 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/10_front-steps-iced-coffee-trio-mixed-outdoor_B_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="variant-row">
+        <div class="variant-label"><span class="pill d">D</span><span class="which">D — Picked</span><span class="meta">— NB Pro · 2K · branded · Apr 27</span></div>
+        <div class="grid">
+          <figure>
+            <span class="ratio">1:1</span>
+            <img src="img/pro-branded-apr27/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" alt="D 1:1 source" loading="lazy">
+            <figcaption>Source · 1:1 · <a class="download" href="img/pro-branded-apr27/10_front-steps-iced-coffee-trio-mixed-outdoor_1x1.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">4:5</span>
+            <img src="img/picks-4x5/10_front-steps-iced-coffee-trio-mixed-outdoor_D_4x5.png" alt="D 4:5" loading="lazy">
+            <figcaption>4:5 · Instagram feed · <a class="download" href="img/picks-4x5/10_front-steps-iced-coffee-trio-mixed-outdoor_D_4x5.png" download>download</a></figcaption>
+          </figure>
+          <figure>
+            <span class="ratio">9:16</span>
+            <img src="img/picks-9x16/10_front-steps-iced-coffee-trio-mixed-outdoor_D_9x16.png" alt="D 9:16" loading="lazy">
+            <figcaption>9:16 · Reels / Stories · <a class="download" href="img/picks-9x16/10_front-steps-iced-coffee-trio-mixed-outdoor_D_9x16.png" download>download</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <p class="footer-note">4:5 and 9:16 generated 2026-05-20 via Nano Banana Pro recompose (canonical prompt; logos, brand marks, subjects preserved). Scene 04 "E — multi-laugh" is a fresh generation from the branded prompt + explicit multi-laugh clause — no 1:1 reference.</p>
   </div>
 </body>
 </html>
